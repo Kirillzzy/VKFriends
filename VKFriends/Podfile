@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'VKFriends' do
+pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git'
+pod 'SwiftyJSON'
+end

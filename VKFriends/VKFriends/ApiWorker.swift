@@ -8,11 +8,12 @@
 
 import Foundation
 import SwiftyVK
-import SwiftyJSON
 
 
 final class ApiWorker{
- 
+    
+    static var namesAndCities = [String: String]()
+   
     class func authorize() {
         //VK.logOut()
         //print("SwiftyVK: LogOut")
@@ -69,22 +70,32 @@ final class ApiWorker{
     
     
     class func friendsGet(){
-        print(VK.API.Friends.get())
         let req = VK.API.Friends.get([
             .count : "0",
             .fields : "city,domain"
             ])
-        req.successBlock = {response in print("SwiftyVK: friendsGet success \n \(response)")}
-        req.errorBlock = {error in print("SwiftyVK: friendsGet fail \n \(error)")}
+        req.successBlock = {response in
+            namesAndCities.removeAll()
+            for i in 0..<response["count"].intValue{
+                let nameFriend = "\(response["items", i, "last_name"].stringValue) \(response["items", i, "first_name"].stringValue)"
+                var cityFriend = ""
+                if let cityName = response["items", i, "city", "title"].string{
+                    cityFriend = cityName
+                }
+                namesAndCities[nameFriend] = cityFriend
+            }
+        }
+        req.errorBlock = {error in print("error")}
         req.send()
     }
     
     
     
-    class func uploadPhoto() {
+    
+    class func uploadPhoto(userID: Int) {
         let data = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "testImage", ofType: "jpg")!))
         let media = Media(imageData: data, type: .JPG)
-        let req = VK.API.Upload.Photo.toWall.toUser(media, userId: "4680178")
+        let req = VK.API.Upload.Photo.toWall.toUser(media, userId: "\(userID)")
         req.progressBlock = { (done, total) -> () in print("SwiftyVK: uploadPhoto progress: \(done) of \(total))")}
         req.successBlock = {response in print("SwiftyVK: uploadPhoto success \n \(response)")}
         req.errorBlock = {error in print("SwiftyVK: uploadPhoto fail \n \(error)")}

@@ -8,97 +8,118 @@
 
 import Foundation
 import SwiftyVK
+import AlamofireImage
+import Alamofire
 
 
-final class ApiWorker{
+
+class ApiWorker: VKDelegate{
     
-    static var namesAndCities = [String: String]()
+    var friends = [VKFriendClass]()
+    var status: Bool = false
    
-    class func authorize() {
-        //VK.logOut()
-        //print("SwiftyVK: LogOut")
+    static let sharedInstance: ApiWorker = {
+        let instance = ApiWorker()
+        return instance
+    }()
+    
+    init(){
+        VK.configure(appID: Constants.appID, delegate: self)
         VK.logIn()
-        print("SwiftyVK: authorize")
+    }
+    
+    func vkWillAuthorize() -> [VK.Scope] {
+        
+        return [.offline, .friends]
+    }
+
+    func vkDidUnauthorize() {
+        //Called when user is log out.
+    }
+    
+    func vkAutorizationFailedWith(error: VK.Error) {
+        //Called when SwiftyVK could not authorize. To let the application know that something went wrong.
+    }
+    
+    func vkShouldUseTokenPath() -> String? {
+        //Called when SwiftyVK need know where a token is located.
+        return nil //Path to save/read token or nil if should save token to UserDefaults
+    }
+    
+    func vkWillPresentView() -> UIViewController {
+        //Only for iOS!
+        //Called when need to display a view from SwiftyVK.
+        return UIApplication.shared.delegate!.window!!.rootViewController!
+    }
+    
+    func login(){
+        VK.logIn()
+    }
+    
+    func checkState() -> VK.States{
+        return VK.state
     }
     
     
+    func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
+        print("HERE")
+        print("_--------__-------_")
+        self.friendsGet()
+        //Called when the user is log in.
+        //Here you can start to send requests to the API.
+    }
     
-    class func logout() {
+    func logout() {
         VK.logOut()
         print("SwiftyVK: LogOut")
     }
     
-    class func state() -> VK.States{
-        return VK.state
-    }
-    
-    class func captcha() {
-        let req = VK.API.custom(method: "captcha.force")
-        req.successBlock = {response in print("SwiftyVK: Captcha success \n \(response)")}
-        req.errorBlock = {error in print("SwiftyVK: Captcha fail \n \(error)")}
-        req.send()
+    var state: VK.States{
+        get{
+            return VK.state
+        }
     }
     
     
-    
-    class func validation() {
-        let req = VK.API.custom(method: "account.testValidation")
-        req.successBlock = {response in print("SwiftyVK: Captcha success \n \(response)")}
-        req.errorBlock = {error in print("SwiftyVK: Captcha fail \n \(error)")}
-        req.send()
-    }
-    
-    
-    
-    class func usersGet() {
-        /*let req = VK.API.Users.get(
-         [VK.Arg.userId : "1"]).send(
-         method: .Get,
-         onSuccess: {response in print(response)},
-         onError: {error in print(error)}
-         )*/
-        let req = VK.API.Users.get([VK.Arg.userId : "1"])
-        req.maxAttempts = 1
-        req.timeout = 10
-        req.asynchronous = true
-        req.catchErrors = true
-        req.successBlock = {response in print("SwiftyVK: usersGet success \n \(response)")}
-        req.errorBlock = {error in print("SwiftyVK: usersGet fail \n \(error)")}
-        req.send()
+    func getFriendPhotoLink(friend: VKFriendClass){
+        _ = VK.API.Photos.get([
+            .ownerId :"\(friend.getId())",
+            .albumId : "profile"]).send(
+                onSuccess: {response in
+                    friend.linkProfileImage = response["items", response["count"].intValue - 1, "photo_130"].stringValue
+            },
+                onError: {
+                    error in print("SwiftyVK: photosGet fail \n \(error)")
+                    friend.linkProfileImage = ""
+            })
     }
     
     
     
-    class func friendsGet(){
+    func friendsGet(){
         let req = VK.API.Friends.get([
             .count : "0",
             .fields : "city,domain"
             ])
         req.successBlock = {response in
-            namesAndCities.removeAll()
-            for i in 0..<response["count"].intValue{
-                let nameFriend = "\(response["items", i, "last_name"].stringValue) \(response["items", i, "first_name"].stringValue)"
+            //cleaning array
+            self.friends.removeAll()
+            //getting Friends names, their cities and profile photos
+            for friend in response["items"].arrayValue{
                 var cityFriend = ""
-                if let cityName = response["items", i, "city", "title"].string{
+                if let cityName = friend["city", "title"].string{
                     cityFriend = cityName
                 }
-                namesAndCities[nameFriend] = cityFriend
+                let newFriend =
+                    VKFriendClass(name: "\(friend["last_name"].stringValue) \(friend["first_name"].stringValue)",
+                    city: cityFriend,
+                    id: friend["id"].stringValue,
+                    linkProfileImage: "")
+                self.friends.append(newFriend)
+                self.getFriendPhotoLink(friend: newFriend)
             }
         }
         req.errorBlock = {error in print("error")}
-        req.send()
-    }
-    
-    
-    
-    
-    class func uploadPhoto(userID: Int) {
-        let data = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "testImage", ofType: "jpg")!))
-        let media = Media(imageData: data, type: .JPG)
-        let req = VK.API.Upload.Photo.toWall.toUser(media, userId: "\(userID)")
-        req.progressBlock = { (done, total) -> () in print("SwiftyVK: uploadPhoto progress: \(done) of \(total))")}
-        req.successBlock = {response in print("SwiftyVK: uploadPhoto success \n \(response)")}
-        req.errorBlock = {error in print("SwiftyVK: uploadPhoto fail \n \(error)")}
         req.send()
     }
 }

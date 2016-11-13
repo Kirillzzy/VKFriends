@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AlamofireImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-VKFriends.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>37AA8C2507CE864C414F5E38AFFCF4ED</key>
+		<key>333E47F1004946B94926B19979768D18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C575DD7620E8E3D69B90F355376F3EFF</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F64C03D6C97936C3E983EF39B5445CFE</key>
+		<key>879E4B9FD0D64650AC6DBE9BC897BFDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEBB3A69C8D41E66739F3F088EFE85EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FCE99133237A036ED1027F0419F5051B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FEBF8B5E00A50FA8589407026685048C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

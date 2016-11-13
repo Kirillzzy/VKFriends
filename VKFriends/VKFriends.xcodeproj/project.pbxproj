@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B1AF5A51DD1E6620022430A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1AF5A41DD1E6620022430A /* Alamofire.framework */; };
+		7B1AF5A71DD1E8820022430A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */; };
+		7B95453B1DD5016E003AF335 /* VKFriendClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95453A1DD5016E003AF335 /* VKFriendClass.swift */; };
+		7BB0E4811DD30CF90024BA18 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB0E4801DD30CF90024BA18 /* ListTableViewController.swift */; };
+		7BBD54F81DD4BB670055CA2D /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBD54F71DD4BB670055CA2D /* SDWebImage.framework */; };
+		7BC1EB511DD8BF4600870A62 /* CustomAnnotaionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1EB501DD8BF4600870A62 /* CustomAnnotaionClass.swift */; };
+		7BC1EB531DD8EDD500870A62 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1EB521DD8EDD500870A62 /* FriendTableViewCell.swift */; };
 		7BC34BB31DCB3D3E00DA3B53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34BB21DCB3D3E00DA3B53 /* AppDelegate.swift */; };
 		7BC34BB51DCB3D3E00DA3B53 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34BB41DCB3D3E00DA3B53 /* MapViewController.swift */; };
 		7BC34BB81DCB3D3E00DA3B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC34BB61DCB3D3E00DA3B53 /* Main.storyboard */; };
 		7BC34BBA1DCB3D3E00DA3B53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC34BB91DCB3D3E00DA3B53 /* Assets.xcassets */; };
 		7BC34BBD1DCB3D3E00DA3B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC34BBB1DCB3D3E00DA3B53 /* LaunchScreen.storyboard */; };
 		7BC34BC51DCB408200DA3B53 /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC34BC41DCB408200DA3B53 /* SwiftyVK.framework */; };
-		7BC34BC71DCB41C900DA3B53 /* ListFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34BC61DCB41C900DA3B53 /* ListFriendsViewController.swift */; };
 		7BC34BC91DCB44DB00DA3B53 /* SwiftyVKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34BC81DCB44DB00DA3B53 /* SwiftyVKDelegate.swift */; };
 		7BC34BCB1DCB47C100DA3B53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34BCA1DCB47C000DA3B53 /* Constants.swift */; };
 		7BC34BCD1DCB7CB800DA3B53 /* ApiWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34BCC1DCB7CB800DA3B53 /* ApiWorker.swift */; };
@@ -23,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B1AF5A41DD1E6620022430A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
+		7B95453A1DD5016E003AF335 /* VKFriendClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKFriendClass.swift; sourceTree = "<group>"; };
+		7BB0E4801DD30CF90024BA18 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		7BBD54F71DD4BB670055CA2D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
+		7BC1EB501DD8BF4600870A62 /* CustomAnnotaionClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotaionClass.swift; sourceTree = "<group>"; };
+		7BC1EB521DD8EDD500870A62 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		7BC34BAF1DCB3D3E00DA3B53 /* VKFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC34BB21DCB3D3E00DA3B53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BC34BB41DCB3D3E00DA3B53 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +44,6 @@
 		7BC34BBC1DCB3D3E00DA3B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BC34BBE1DCB3D3E00DA3B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BC34BC41DCB408200DA3B53 /* SwiftyVK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyVK.framework; path = "../../../../Library/Developer/Xcode/DerivedData/VKFriends-glkmzbhzveewywdbrtbsxsuwqzwt/Build/Products/Debug-iphonesimulator/SwiftyVK/SwiftyVK.framework"; sourceTree = "<group>"; };
-		7BC34BC61DCB41C900DA3B53 /* ListFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFriendsViewController.swift; sourceTree = "<group>"; };
 		7BC34BC81DCB44DB00DA3B53 /* SwiftyVKDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyVKDelegate.swift; sourceTree = "<group>"; };
 		7BC34BCA1DCB47C000DA3B53 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7BC34BCC1DCB7CB800DA3B53 /* ApiWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiWorker.swift; sourceTree = "<group>"; };
@@ -47,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BBD54F81DD4BB670055CA2D /* SDWebImage.framework in Frameworks */,
+				7B1AF5A71DD1E8820022430A /* AlamofireImage.framework in Frameworks */,
+				7B1AF5A51DD1E6620022430A /* Alamofire.framework in Frameworks */,
 				7BC34BCF1DCB991F00DA3B53 /* SwiftyJSON.framework in Frameworks */,
 				7BC34BC51DCB408200DA3B53 /* SwiftyVK.framework in Frameworks */,
 				96F95778752B02453C79271E /* Pods_VKFriends.framework in Frameworks */,
@@ -68,6 +83,9 @@
 		32E018584C6A2B514DEFADE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BBD54F71DD4BB670055CA2D /* SDWebImage.framework */,
+				7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */,
+				7B1AF5A41DD1E6620022430A /* Alamofire.framework */,
 				7BC34BCE1DCB991F00DA3B53 /* SwiftyJSON.framework */,
 				7BC34BC41DCB408200DA3B53 /* SwiftyVK.framework */,
 				DFAF44720F330C5D652C043B /* Pods_VKFriends.framework */,
@@ -98,11 +116,14 @@
 			children = (
 				7BC34BB21DCB3D3E00DA3B53 /* AppDelegate.swift */,
 				7BC34BB41DCB3D3E00DA3B53 /* MapViewController.swift */,
-				7BC34BC61DCB41C900DA3B53 /* ListFriendsViewController.swift */,
+				7BB0E4801DD30CF90024BA18 /* ListTableViewController.swift */,
+				7BC1EB501DD8BF4600870A62 /* CustomAnnotaionClass.swift */,
 				7BC34BD01DCD198600DA3B53 /* PersonInformationViewController.swift */,
+				7B95453A1DD5016E003AF335 /* VKFriendClass.swift */,
 				7BC34BCC1DCB7CB800DA3B53 /* ApiWorker.swift */,
 				7BC34BC81DCB44DB00DA3B53 /* SwiftyVKDelegate.swift */,
 				7BC34BCA1DCB47C000DA3B53 /* Constants.swift */,
+				7BC1EB521DD8EDD500870A62 /* FriendTableViewCell.swift */,
 				7BC34BB61DCB3D3E00DA3B53 /* Main.storyboard */,
 				7BC34BB91DCB3D3E00DA3B53 /* Assets.xcassets */,
 				7BC34BBB1DCB3D3E00DA3B53 /* LaunchScreen.storyboard */,
@@ -235,11 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC1EB511DD8BF4600870A62 /* CustomAnnotaionClass.swift in Sources */,
 				7BC34BCB1DCB47C100DA3B53 /* Constants.swift in Sources */,
-				7BC34BC71DCB41C900DA3B53 /* ListFriendsViewController.swift in Sources */,
 				7BC34BB51DCB3D3E00DA3B53 /* MapViewController.swift in Sources */,
+				7BB0E4811DD30CF90024BA18 /* ListTableViewController.swift in Sources */,
 				7BC34BB31DCB3D3E00DA3B53 /* AppDelegate.swift in Sources */,
 				7BC34BCD1DCB7CB800DA3B53 /* ApiWorker.swift in Sources */,
+				7B95453B1DD5016E003AF335 /* VKFriendClass.swift in Sources */,
+				7BC1EB531DD8EDD500870A62 /* FriendTableViewCell.swift in Sources */,
 				7BC34BD11DCD198600DA3B53 /* PersonInformationViewController.swift in Sources */,
 				7BC34BC91DCB44DB00DA3B53 /* SwiftyVKDelegate.swift in Sources */,
 			);
@@ -365,7 +389,14 @@
 			baseConfigurationReference = BF47DBFF8605664D500DD80F /* Pods-VKFriends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+				);
 				INFOPLIST_FILE = VKFriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirillzzy.VKFriends;
@@ -379,7 +410,14 @@
 			baseConfigurationReference = A41BC49DFFA3377038EB6B7E /* Pods-VKFriends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+				);
 				INFOPLIST_FILE = VKFriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirillzzy.VKFriends;

@@ -62,9 +62,10 @@ class ApiWorker: VKDelegate{
     
     
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
+        print("_--------__-------_")
         print("HERE")
         print("_--------__-------_")
-        self.friendsGet()
+        //self.friendsGet()
         //Called when the user is log in.
         //Here you can start to send requests to the API.
     }
@@ -86,7 +87,7 @@ class ApiWorker: VKDelegate{
             .ownerId :"\(friend.getId())",
             .albumId : "profile"]).send(
                 onSuccess: {response in
-                    friend.linkProfileImage = response["items", response["count"].intValue - 1, "photo_130"].stringValue
+                    friend.linkProfileImage = response["items", response["count"].intValue - 1, "photo_604"].stringValue
             },
                 onError: {
                     error in print("SwiftyVK: photosGet fail \n \(error)")
@@ -118,6 +119,7 @@ class ApiWorker: VKDelegate{
                 self.friends.append(newFriend)
                 self.getFriendPhotoLink(friend: newFriend)
             }
+            self.friends.sort(by: {friend1, friend2 in friend1.getName() < friend2.getName()})
         }
         req.errorBlock = {error in print("error")}
         req.send()

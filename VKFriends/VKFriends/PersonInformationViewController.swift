@@ -28,11 +28,17 @@ class PersonInformationViewController: UIViewController {
         super.viewDidLoad()
         nameLabel.text = name
         cityLabel.text = city
-        ProfileImageUIImageView.image = ProfileImage//ApiWorker.getPhotoByID(id: Int(id)!, size: "photo_130")
+        ProfileImageUIImageView.image = ProfileImage
+        ProfileImageUIImageView.layer.masksToBounds = true
+        ProfileImageUIImageView.layer.cornerRadius = 15
     }
     
     @IBAction func newMessageButtonPressed(_ sender: Any) {
        
+    }
+    
+    @IBAction func buyFriendButtonPressed(_ sender: Any) {
+        
     }
 
 }

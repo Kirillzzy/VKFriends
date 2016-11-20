@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import SDWebImage
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -29,7 +30,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.map.delegate = self
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -40,23 +40,45 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
-        if vkManager.state == .authorized {
-            let when = DispatchTime.now() + 3
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                self.reloadFriends()
-            }
-            
+        let when = DispatchTime.now() + 5
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.reloadMap()
+            self.setRegionAndSpan()
         }
-        
+       
     }
     
-    private func reloadFriends(){
-        self.friends = vkManager.friends
-        for friend in self.friends{
-            let point = CustomAnnotaionClass(coordinate: friend.coordinates)
-            point.title = friend.getName()
-            map.addAnnotation(point)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.reloadMap()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        //setRegionAndSpan()
+    }
+    
+    func reloadMap(){
+        map.removeAnnotations(map.annotations)
+        self.friends = self.vkManager.friends
+        self.addFriendsOnMap()
+    }
+    
+    
+    func addFriendsOnMap(){
+        for friend in friends{
+            addFriendOnMap(friend: friend)
         }
+    }
+    
+    func addFriendOnMap(friend: VKFriendClass){
+        if(friend.coordinate.longitude == 0 && friend.coordinate.latitude == 0){
+            return
+        }
+        friend.coordinate.latitude += MapViewController.randomDouble(min: -0.1, max: 0.1)
+        friend.coordinate.longitude += MapViewController.randomDouble(min: -0.1, max: 0.1)
+        map.addAnnotation(friend)
+        
     }
     
     internal func locationManager(_ manager: CLLocationManager,
@@ -73,64 +95,88 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         locationManager.stopUpdatingLocation()
     }
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation
-        {
-            return nil
+        if let annotation = annotation as? VKFriendClass {
+            let identifier = "pin"
+            var view: MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                as? MKPinAnnotationView {
+                dequeuedView.annotation = annotation
+                if let imageView = dequeuedView.leftCalloutAccessoryView as? UIImageView{
+                    imageView.image = annotation.profileImage.image
+                }
+                view = dequeuedView
+            } else {
+                view = MKPinAnnotationView(annotation: annotation,
+                                           reuseIdentifier: identifier)
+                view.isEnabled = true
+                view.canShowCallout = true
+                let btn = UIButton(type: .detailDisclosure)
+                view.rightCalloutAccessoryView = btn
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+                imageView.contentMode = UIViewContentMode.scaleAspectFill
+                imageView.image = annotation.profileImage.image
+                imageView.layer.masksToBounds = true
+                imageView.layer.cornerRadius = 20
+                view.leftCalloutAccessoryView = imageView as UIView
+            }
+            return view
         }
-        let identifier = "Pin"
-        
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView?.canShowCallout = false
-        } else {
-            annotationView?.annotation = annotation
-        }
-        annotationView?.image = #imageLiteral(resourceName: "camera")
-        return annotationView
+        return nil
     }
     
-    
-    
-
-
     internal func mapView(_ mapView: MKMapView,
-                 didSelect view: MKAnnotationView)
-    {
+                 didSelect view: MKAnnotationView){
         if view.annotation is MKUserLocation{
             return
         }
-        
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
-        performSegue(withIdentifier: "fromMapSegue", sender: view)
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+       performSegue(withIdentifier: "fromMapSegue", sender: view)
     }
     
     
     
+    func setRegionAndSpan(){
+        map.showAnnotations(map.annotations, animated: true)
+    }
+    
 }
 
+
+extension MapViewController{
+    static func randomDouble(min: Double, max: Double) -> Double {
+        return (Double(arc4random()) / 0xFFFFFFFF) * (max - min) + min
+    }
+}
 
 // MARK: - prepare for segue
 extension MapViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "fromMapSegue"{
-                if let vc = segue.destination as? PersonInformationViewController{
-                        /*let friend = self.lastFriend
-                        vc.title = friend?.getName()
-                        vc.city = friend?.getCity()
-                        vc.name = friend?.getName()
-                        vc.id = friend?.getId()
-                        vc.ProfileImage = friend?.profileImage.image*/
+            if let annotationView = sender as? MKAnnotationView{
+                let friend = annotationView.annotation as! VKFriendClass
+                let vc = segue.destination as! PersonInformationViewController
+                vc.name = friend.getName()
+                vc.city = friend.getCity()
+                vc.id = friend.getId()
+                vc.ProfileImage = friend.profileImage.image
             }
         }
     }
 }
 
-///todo:
 
-//vkdidautorize
-//some event happend(i got frendlist, locations of friends)
-//custom cell
 
+
+//i- Ap purchases
+//sushnosty v prilozenii
+//cloadkit firebase
+//app record
+//itunes sandbox
+//tests

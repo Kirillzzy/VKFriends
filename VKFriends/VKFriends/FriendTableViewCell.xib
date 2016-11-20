@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="KGk-i7-Jjw" customClass="FriendTableViewCell" customModule="VKFriends" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oS4-al-LDP">
+                        <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="ReR-G4-6Vy"/>
+                            <constraint firstAttribute="height" constant="40" id="vhL-4X-CTZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulC-wG-jqK">
+                        <rect key="frame" x="48" y="8" width="264" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oS4-al-LDP" secondAttribute="bottom" constant="1.5" id="Bxl-YO-szh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ulC-wG-jqK" secondAttribute="trailing" id="MBD-Sm-7uv"/>
+                    <constraint firstAttribute="topMargin" secondItem="ulC-wG-jqK" secondAttribute="top" id="Ndz-f1-xK1"/>
+                    <constraint firstItem="ulC-wG-jqK" firstAttribute="leading" secondItem="oS4-al-LDP" secondAttribute="trailing" constant="8" id="Tqf-27-26B"/>
+                    <constraint firstItem="oS4-al-LDP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Yea-WD-843"/>
+                    <constraint firstItem="oS4-al-LDP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="m49-Tl-gWn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ulC-wG-jqK" secondAttribute="bottom" constant="-0.5" id="vd8-70-T7r"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameCityLabel" destination="ulC-wG-jqK" id="Cgn-yz-4pi"/>
+                <outlet property="profileImageView" destination="oS4-al-LDP" id="v6J-Bo-5iX"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

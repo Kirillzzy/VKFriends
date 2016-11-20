@@ -12,7 +12,7 @@ import SDWebImage
 import MapKit
 
 
-class VKFriendClass{
+class VKFriendClass: NSObject, MKAnnotation{
     private var name: String = ""
     private var city: String = ""
     private var id: String = ""
@@ -22,25 +22,31 @@ class VKFriendClass{
             reloadProfileImage()
         }
     }
-    var coordinates: CLLocationCoordinate2D
     
+    var title: String?{
+        get{
+            return name
+        }
+    }
     
-    init(name: String, city: String?, id: String, linkProfileImage: String){
+    var coordinate: CLLocationCoordinate2D
+    
+    init(name: String, city: String?, id: String, linkProfileImage: String, coordinate: CLLocationCoordinate2D? = nil){
         self.name = name
         if let cityName = city{
             self.city = cityName
         }
         self.id = id
         self.linkProfileImage = linkProfileImage
-        self.coordinates = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        getCoordinates()
+        self.coordinate = coordinate ??  CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        super.init()
+        self.getCoordinates()
     }
     
     func reloadProfileImage(){
-        if linkProfileImage == ""{
+        //if linkProfileImage == ""{
             profileImage.image = #imageLiteral(resourceName: "camera")
-        }else{
-            //profileImage.image = UIImage(named: "reloadControlGif")
+        if linkProfileImage != ""{
             profileImage.sd_setImage(with: URL(string: linkProfileImage))
         }
     }
@@ -67,15 +73,26 @@ class VKFriendClass{
         if city == ""{
             return
         }
-        
         geocoder.geocodeAddressString(city, completionHandler: {(placemark, error) in
             if error != nil{
                 return
             }
             if let location = placemark?[0].location?.coordinate{
-                self.coordinates = location
+                self.coordinate = location
             }
         })
+    }
+    
+    
+    static func resizeImage(image: UIImage, newW: Double, newH: Double) -> UIImage {
+        let newWidth = CGFloat(newW)
+        let newHeight = CGFloat(newH)
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
     
 }

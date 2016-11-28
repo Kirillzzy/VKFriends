@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9c-gd-gdy">
-                                <rect key="frame" x="16" y="424" width="343" height="73"/>
+                                <rect key="frame" x="16" y="475" width="343" height="73"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Buy a friend for chatting"/>
                                 <connections>
@@ -63,13 +63,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vyR-NE-Bf9" firstAttribute="top" secondItem="X9c-gd-gdy" secondAttribute="bottom" constant="30" id="5aH-bo-8dy"/>
                             <constraint firstAttribute="trailing" secondItem="ndI-cd-Fzn" secondAttribute="trailing" constant="16" id="8HW-rz-lIw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vyR-NE-Bf9" secondAttribute="trailing" id="BNl-xk-bmH"/>
                             <constraint firstItem="l5W-1R-gd9" firstAttribute="leading" secondItem="Fiu-mT-5eK" secondAttribute="leading" id="EfS-PV-RZR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="X9c-gd-gdy" secondAttribute="leading" id="FSo-6I-o03"/>
                             <constraint firstItem="Udr-1r-HEV" firstAttribute="top" secondItem="ndI-cd-Fzn" secondAttribute="bottom" constant="8" id="QFF-sT-cOa"/>
                             <constraint firstAttribute="leadingMargin" secondItem="vyR-NE-Bf9" secondAttribute="leading" id="SDn-QA-7M1"/>
-                            <constraint firstItem="X9c-gd-gdy" firstAttribute="top" secondItem="Udr-1r-HEV" secondAttribute="bottom" constant="8" id="YC4-7E-ZWb"/>
                             <constraint firstItem="l5W-1R-gd9" firstAttribute="top" secondItem="pgS-Wk-J60" secondAttribute="bottom" id="c12-ac-JOj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Udr-1r-HEV" secondAttribute="trailing" id="cO1-IU-uIZ"/>
                             <constraint firstItem="l5W-1R-gd9" firstAttribute="top" secondItem="pgS-Wk-J60" secondAttribute="bottom" id="iwI-k8-qqc"/>

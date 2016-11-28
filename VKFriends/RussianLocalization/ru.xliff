@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="VKFriends/Assets.xcassets/Sticker Pack.stickerpack" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.1" build-num="8B62"/>
+    </header>
+    <body>
+      <trans-unit id="reloadControlGif">
+        <source>reloadControlGif</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="VKFriends/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.1" build-num="8B62"/>
+    </header>
+    <body/>
+  </file>
+  <file original="VKFriends/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.1" build-num="8B62"/>
+    </header>
+    <body>
+      <trans-unit id="CNr-la-0Kp.title">
+        <source>Person</source>
+        <target>Друг</target>
+        <note>Class = "UIViewController"; title = "Person"; ObjectID = "CNr-la-0Kp";</note>
+      </trans-unit>
+      <trans-unit id="L8g-jc-e52.title">
+        <source>Friends</source>
+        <target>Друзья</target>
+        <note>Class = "UINavigationItem"; title = "Friends"; ObjectID = "L8g-jc-e52";</note>
+      </trans-unit>
+      <trans-unit id="QgQ-hx-EFd.title">
+        <source>Friends</source>
+        <target>Друзья</target>
+        <note>Class = "UINavigationItem"; title = "Friends"; ObjectID = "QgQ-hx-EFd";</note>
+      </trans-unit>
+      <trans-unit id="Tsa-v6-BsB.title">
+        <source>List</source>
+        <target>Список</target>
+        <note>Class = "UITabBarItem"; title = "List"; ObjectID = "Tsa-v6-BsB";</note>
+      </trans-unit>
+      <trans-unit id="Udr-1r-HEV.text">
+        <source>City</source>
+        <target>Город</target>
+        <note>Class = "UILabel"; text = "City"; ObjectID = "Udr-1r-HEV";</note>
+      </trans-unit>
+      <trans-unit id="X9c-gd-gdy.normalTitle">
+        <source>Buy a friend for chatting</source>
+        <target>Купить чат с другом</target>
+        <note>Class = "UIButton"; normalTitle = "Buy a friend for chatting"; ObjectID = "X9c-gd-gdy";</note>
+      </trans-unit>
+      <trans-unit id="Xhe-oB-q8m.title">
+        <source>Map</source>
+        <target>Карта</target>
+        <note>Class = "UIViewController"; title = "Map"; ObjectID = "Xhe-oB-q8m";</note>
+      </trans-unit>
+      <trans-unit id="ce8-gj-woq.title">
+        <source>Map</source>
+        <target>Карта</target>
+        <note>Class = "UITabBarItem"; title = "Map"; ObjectID = "ce8-gj-woq";</note>
+      </trans-unit>
+      <trans-unit id="jt9-Yc-qzV.title">
+        <source>Map</source>
+        <target>Карта</target>
+        <note>Class = "UITabBarItem"; title = "Map"; ObjectID = "jt9-Yc-qzV";</note>
+      </trans-unit>
+      <trans-unit id="ndI-cd-Fzn.text">
+        <source>Name</source>
+        <target>Имя</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "ndI-cd-Fzn";</note>
+      </trans-unit>
+      <trans-unit id="oRh-6z-Kat.title">
+        <source>List</source>
+        <target>Список</target>
+        <note>Class = "UITabBarItem"; title = "List"; ObjectID = "oRh-6z-Kat";</note>
+      </trans-unit>
+      <trans-unit id="vUW-1G-rZc.title">
+        <source>List</source>
+        <target>Список</target>
+        <note>Class = "UITableViewController"; title = "List"; ObjectID = "vUW-1G-rZc";</note>
+      </trans-unit>
+      <trans-unit id="vyR-NE-Bf9.normalTitle">
+        <source>New Message</source>
+        <target>Новое сообщение</target>
+        <note>Class = "UIButton"; normalTitle = "New Message"; ObjectID = "vyR-NE-Bf9";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="VKFriends/Info.plist" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.1" build-num="8B62"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>VKFriends</source>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="VKFriends/Localizable.strings" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.1" build-num="8B62"/>
+    </header>
+    <body>
+      <trans-unit id="basetext">
+        <source>basetext</source>
+        <note>comment</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="VKFriendsUITests/Info.plist" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.1" build-num="8B62"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

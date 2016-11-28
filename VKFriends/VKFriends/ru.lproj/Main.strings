@@ -1,0 +1,39 @@
+
+/* Class = "UIViewController"; title = "Person"; ObjectID = "CNr-la-0Kp"; */
+"CNr-la-0Kp.title" = "Друг";
+
+/* Class = "UINavigationItem"; title = "Friends"; ObjectID = "L8g-jc-e52"; */
+"L8g-jc-e52.title" = "Друзья";
+
+/* Class = "UINavigationItem"; title = "Friends"; ObjectID = "QgQ-hx-EFd"; */
+"QgQ-hx-EFd.title" = "Друзья";
+
+/* Class = "UITabBarItem"; title = "List"; ObjectID = "Tsa-v6-BsB"; */
+"Tsa-v6-BsB.title" = "Список";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "Udr-1r-HEV"; */
+"Udr-1r-HEV.text" = "Город";
+
+/* Class = "UIButton"; normalTitle = "Buy a friend for chatting"; ObjectID = "X9c-gd-gdy"; */
+"X9c-gd-gdy.normalTitle" = "Купить чат с другом";
+
+/* Class = "UIViewController"; title = "Map"; ObjectID = "Xhe-oB-q8m"; */
+"Xhe-oB-q8m.title" = "Карта";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "ce8-gj-woq"; */
+"ce8-gj-woq.title" = "Карта";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "jt9-Yc-qzV"; */
+"jt9-Yc-qzV.title" = "Карта";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ndI-cd-Fzn"; */
+"ndI-cd-Fzn.text" = "Имя";
+
+/* Class = "UITabBarItem"; title = "List"; ObjectID = "oRh-6z-Kat"; */
+"oRh-6z-Kat.title" = "Список";
+
+/* Class = "UITableViewController"; title = "List"; ObjectID = "vUW-1G-rZc"; */
+"vUW-1G-rZc.title" = "Список";
+
+/* Class = "UIButton"; normalTitle = "New Message"; ObjectID = "vyR-NE-Bf9"; */
+"vyR-NE-Bf9.normalTitle" = "Новое сообщение";

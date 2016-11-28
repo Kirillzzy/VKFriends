@@ -183,7 +183,7 @@ extension MapViewController{
 }
 
 
-
+// MARK: - working with Realm
 extension MapViewController{
     func addLastLocation(){
         let realm = try! Realm()
@@ -201,3 +201,14 @@ extension MapViewController{
         return users
     }
 }
+
+
+extension MapViewController{
+    func Localize(){
+        // smth = NSLocalizedString("basetext", comment: "comment")
+        // also after that dont forget about export -> add target to localization and import it
+    }
+}
+
+
+

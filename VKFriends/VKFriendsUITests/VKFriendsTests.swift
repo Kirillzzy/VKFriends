@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import UIKit
+import Foundation
 @testable import VKFriends
 
 

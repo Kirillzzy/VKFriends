@@ -45,7 +45,6 @@ class ListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        reloadTableView()
     }
     
     private func reloadTableView(){
@@ -74,8 +73,14 @@ class ListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> FriendTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendTableViewCell
-        cell.profileImageView.image = friends[indexPath.row].profileImage.image
-        cell.nameCityLabel.text = friends[indexPath.row].getName() + ": " + friends[indexPath.row].getCity()
+        cell.profileImageView.image = #imageLiteral(resourceName: "camera")
+        if friends[indexPath.row].getLinkPhoto() != ""{
+            cell.profileImageView.sd_setImage(with: URL(string: friends[indexPath.row].getLinkPhoto()))
+        }
+        cell.nameCityLabel.text = friends[indexPath.row].getName()
+        if friends[indexPath.row].getCity() != ""{
+            cell.nameCityLabel.text = friends[indexPath.row].getName() + ": " + friends[indexPath.row].getCity()
+        }
         return cell
     }
     

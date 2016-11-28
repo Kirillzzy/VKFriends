@@ -10,13 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 import SDWebImage
+import RealmSwift
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     private let vk: SwiftyVKDelegate = SwiftyVKDelegate()
     @IBOutlet weak var map: MKMapView!
     private var locationManager: CLLocationManager!
-    private var coords: (Double, Double) = (0, 0)
+    var coords: (Double, Double) = (0, 0)
     let vkManager = ApiWorker.sharedInstance
     var friends = [VKFriendClass]()
     
@@ -55,7 +56,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //setRegionAndSpan()
     }
     
     func reloadMap(){
@@ -94,6 +94,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             map.setRegion(region, animated: true)
         }
         locationManager.stopUpdatingLocation()
+        addLastLocation()
     }
     
     
@@ -105,7 +106,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 if let imageView = dequeuedView.leftCalloutAccessoryView as? UIImageView{
-                    imageView.image = annotation.profileImage.image
+                    if annotation.getLinkPhoto() == ""{
+                        imageView.image = #imageLiteral(resourceName: "camera")
+                    }
+                    else{
+                        imageView.sd_setImage(with: URL(string: annotation.getLinkPhoto()))
+                    }
                 }
                 view = dequeuedView
             } else {
@@ -118,7 +124,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
                 imageView.contentMode = UIViewContentMode.scaleAspectFill
-                imageView.image = annotation.profileImage.image
+                if annotation.getLinkPhoto() == ""{
+                    imageView.image = #imageLiteral(resourceName: "camera")
+                }else{
+                    imageView.sd_setImage(with: URL(string: annotation.getLinkPhoto())) //= annotation.profileImage.image
+                }
                 imageView.layer.masksToBounds = true
                 imageView.layer.cornerRadius = 20
                 view.leftCalloutAccessoryView = imageView as UIView
@@ -127,6 +137,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         return nil
     }
+    
     
     internal func mapView(_ mapView: MKMapView,
                  didSelect view: MKAnnotationView){
@@ -173,10 +184,20 @@ extension MapViewController{
 
 
 
-
-//i- Ap purchases
-//sushnosty v prilozenii
-//cloadkit firebase
-//app record
-//itunes sandbox
-//tests
+extension MapViewController{
+    func addLastLocation(){
+        let realm = try! Realm()
+        try! realm.write{
+            let user = User()
+            user.latidute = self.coords.0
+            user.longitude = self.coords.1
+            user.created = Date()
+            realm.add(user)
+        }
+    }
+    
+    func getUsers() -> Results<User>{
+        let users = try! Realm().objects(User.self)
+        return users
+    }
+}

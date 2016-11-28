@@ -2,6 +2,11 @@ PODS:
   - Alamofire (4.0.1)
   - AlamofireImage (3.1.0):
     - Alamofire (~> 4.0)
+  - Realm (2.1.0):
+    - Realm/Headers (= 2.1.0)
+  - Realm/Headers (2.1.0)
+  - RealmSwift (2.1.0):
+    - Realm (= 2.1.0)
   - SDWebImage (4.0.0-beta2):
     - SDWebImage/Core (= 4.0.0-beta2)
   - SDWebImage/Core (4.0.0-beta2)
@@ -11,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireImage (~> 3.1)
+  - RealmSwift
   - SDWebImage (from `https://github.com/rs/SDWebImage.git`)
   - SwiftyJSON
   - SwiftyVK (from `https://github.com/WE-St0r/SwiftyVK.git`)
@@ -32,10 +38,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
+  Realm: bc829ad0ef3d4eea70c34cfcc3b1704d18d50df1
+  RealmSwift: a4d4abbf0088c337cab5b738054395842e4b3052
   SDWebImage: e379f33106cf8d6766f970c0ef1c3fb609c94d78
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   SwiftyVK: c0ed828e01ff58dd087f1b16d2f1a6ad0b195ff9
 
-PODFILE CHECKSUM: c7d81a8b2d9c6b0b0559a654a8bd771aacdad760
+PODFILE CHECKSUM: 9be0e3d41a6f334627ab2e89b10176ae003de7d7
 
 COCOAPODS: 1.1.0.rc.3

@@ -11,6 +11,9 @@
 		7B1AF5A71DD1E8820022430A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */; };
 		7B226D261DDA5A8A00BABF3A /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B226D241DDA5A8A00BABF3A /* FriendTableViewCell.swift */; };
 		7B226D271DDA5A8A00BABF3A /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B226D251DDA5A8A00BABF3A /* FriendTableViewCell.xib */; };
+		7B3549D11DEC4B7400F38A4B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3549D01DEC4B7400F38A4B /* User.swift */; };
+		7B3549D31DEC4B8400F38A4B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3549D21DEC4B8400F38A4B /* Realm.framework */; };
+		7B3549D51DEC4B8900F38A4B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3549D41DEC4B8900F38A4B /* RealmSwift.framework */; };
 		7B69F48C1DE21D4F00790C48 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B69F48B1DE21D4F00790C48 /* StoreKit.framework */; };
 		7B69F48E1DE21E1500790C48 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B69F48D1DE21E1500790C48 /* IAPHelper.swift */; };
 		7B69F4901DE21FD100790C48 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B69F48F1DE21FD100790C48 /* Products.swift */; };
@@ -48,6 +51,9 @@
 		7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
 		7B226D241DDA5A8A00BABF3A /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		7B226D251DDA5A8A00BABF3A /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		7B3549D01DEC4B7400F38A4B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7B3549D21DEC4B8400F38A4B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
+		7B3549D41DEC4B8900F38A4B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		7B69F48B1DE21D4F00790C48 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7B69F48D1DE21E1500790C48 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAPHelper.swift; path = ../IAPHelper.swift; sourceTree = "<group>"; };
 		7B69F48F1DE21FD100790C48 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Products.swift; path = ../Products.swift; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3549D51DEC4B8900F38A4B /* RealmSwift.framework in Frameworks */,
+				7B3549D31DEC4B8400F38A4B /* Realm.framework in Frameworks */,
 				7BBD54F81DD4BB670055CA2D /* SDWebImage.framework in Frameworks */,
 				7B69F48C1DE21D4F00790C48 /* StoreKit.framework in Frameworks */,
 				7B1AF5A71DD1E8820022430A /* AlamofireImage.framework in Frameworks */,
@@ -113,6 +121,8 @@
 		32E018584C6A2B514DEFADE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B3549D41DEC4B8900F38A4B /* RealmSwift.framework */,
+				7B3549D21DEC4B8400F38A4B /* Realm.framework */,
 				7B69F48B1DE21D4F00790C48 /* StoreKit.framework */,
 				7BBD54F71DD4BB670055CA2D /* SDWebImage.framework */,
 				7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */,
@@ -122,6 +132,14 @@
 				DFAF44720F330C5D652C043B /* Pods_VKFriends.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B3549CF1DEC4AC400F38A4B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B3549D01DEC4B7400F38A4B /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		7B69F4961DE229A200790C48 /* VKFriendsUITests */ = {
@@ -137,6 +155,7 @@
 		7BC34BA61DCB3D3D00DA3B53 = {
 			isa = PBXGroup;
 			children = (
+				7B3549CF1DEC4AC400F38A4B /* Models */,
 				7BC34BB11DCB3D3E00DA3B53 /* VKFriends */,
 				7B69F4961DE229A200790C48 /* VKFriendsUITests */,
 				7BC34BB01DCB3D3E00DA3B53 /* Products */,
@@ -349,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BC34BCB1DCB47C100DA3B53 /* Constants.swift in Sources */,
+				7B3549D11DEC4B7400F38A4B /* User.swift in Sources */,
 				7B69F4901DE21FD100790C48 /* Products.swift in Sources */,
 				7BC34BB51DCB3D3E00DA3B53 /* MapViewController.swift in Sources */,
 				7BB0E4811DD30CF90024BA18 /* ListTableViewController.swift in Sources */,
@@ -523,6 +543,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireImage",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Realm",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
 				);
 				INFOPLIST_FILE = VKFriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -544,6 +566,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireImage",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Realm",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
 				);
 				INFOPLIST_FILE = VKFriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -563,6 +587,7 @@
 				7B69F49E1DE229A200790C48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BC34BAA1DCB3D3D00DA3B53 /* Build configuration list for PBXProject "VKFriends" */ = {
 			isa = XCConfigurationList;

@@ -15,14 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        //  _ = VKDelegateExample()
-        return true
-    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        VK.process(url: url, options: options)
+        let app = options[.sourceApplication] as? String
+        VK.process(url: url, sourceApplication: app)
         return true
     }
     

@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PersonInformationViewController: UIViewController {
     
     var name: String!
     var city: String!
     var id: String!
-    var ProfileImage: UIImage!
+    var linkProfileImage: String!
+    var lastSeen: String!
+    var online: Bool!
    
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ProfileImageUIImageView: UIImageView!
+    @IBOutlet weak var onlineLabel: UILabel!
+    @IBOutlet weak var lastSeenLabel: UILabel!
     
     override func loadView() {
         super.loadView()
@@ -28,7 +33,13 @@ class PersonInformationViewController: UIViewController {
         super.viewDidLoad()
         nameLabel.text = name
         cityLabel.text = city
-        ProfileImageUIImageView.image = ProfileImage
+        lastSeenLabel.text = lastSeen
+        if online == true{
+            onlineLabel.text = "Online"
+        }else{
+            onlineLabel.text = "Offline"
+        }
+        ProfileImageUIImageView.sd_setImage(with: URL(string: linkProfileImage))
         ProfileImageUIImageView.layer.masksToBounds = true
         ProfileImageUIImageView.layer.cornerRadius = 15
     }

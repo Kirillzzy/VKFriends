@@ -1,6 +1,7 @@
+// swiftlint:disable type_body_length
 extension VK {
   ///Parameters for methods VK API
-  public enum Arg : String, Hashable {
+  public enum Arg: String, Hashable {
     case userIDs = "user_ids"
     case fields
     case nameCase = "name_case"
@@ -79,6 +80,7 @@ extension VK {
     case fromGroup = "from_group"
     case message
     case attachments
+    case attachment
     case services
     case signed
     case publishDate = "publish_date"
@@ -313,12 +315,14 @@ extension VK {
     case randomId = "random_id"
     case aid
     case gid
-    
-    public var hashValue : Int {
+
+    public var hashValue: Int {
       return self.rawValue.hashValue
     }
   }
 }
+
+
 
 public func == (lhs: VK.Arg, rhs: VK.Arg) -> Bool {
   return lhs.rawValue == rhs.rawValue

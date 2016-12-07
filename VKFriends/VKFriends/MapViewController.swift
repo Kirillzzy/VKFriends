@@ -14,7 +14,6 @@ import RealmSwift
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
-    private let vk: SwiftyVKDelegate = SwiftyVKDelegate()
     @IBOutlet weak var map: MKMapView!
     private var locationManager: CLLocationManager!
     var coords: (Double, Double) = (0, 0)
@@ -25,7 +24,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func loadView() {
         super.loadView()
-        vkManager.friendsGet()
     }
     
     
@@ -124,11 +122,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
                 imageView.contentMode = UIViewContentMode.scaleAspectFill
-                if annotation.getLinkPhoto() == ""{
-                    imageView.image = #imageLiteral(resourceName: "camera")
-                }else{
-                    imageView.sd_setImage(with: URL(string: annotation.getLinkPhoto())) //= annotation.profileImage.image
-                }
+                imageView.sd_setImage(with: URL(string: annotation.getLinkPhoto()))
                 imageView.layer.masksToBounds = true
                 imageView.layer.cornerRadius = 20
                 view.leftCalloutAccessoryView = imageView as UIView
@@ -176,7 +170,7 @@ extension MapViewController{
                 vc.name = friend.getName()
                 vc.city = friend.getCity()
                 vc.id = friend.getId()
-                vc.ProfileImage = friend.profileImage.image
+                vc.linkProfileImage = friend.linkProfileImage
             }
         }
     }

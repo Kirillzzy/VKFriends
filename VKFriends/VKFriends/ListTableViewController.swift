@@ -14,7 +14,6 @@ class ListTableViewController: UITableViewController {
     
     let refreshCtrl = UIRefreshControl()
     
-    private let vk: SwiftyVKDelegate = SwiftyVKDelegate()
     var friends = [VKFriendClass]()
     let vkManager = ApiWorker.sharedInstance
 
@@ -73,10 +72,7 @@ class ListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> FriendTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendTableViewCell
-        cell.profileImageView.image = #imageLiteral(resourceName: "camera")
-        if friends[indexPath.row].getLinkPhoto() != ""{
-            cell.profileImageView.sd_setImage(with: URL(string: friends[indexPath.row].getLinkPhoto()))
-        }
+        cell.profileImageView.sd_setImage(with: URL(string: friends[indexPath.row].getLinkPhoto()))
         cell.nameCityLabel.text = friends[indexPath.row].getName()
         if friends[indexPath.row].getCity() != ""{
             cell.nameCityLabel.text = friends[indexPath.row].getName() + ": " + friends[indexPath.row].getCity()
@@ -104,7 +100,9 @@ extension ListTableViewController{
                 vc.city = friend.getCity()
                 vc.name = friend.getName()
                 vc.id = friend.getId()
-                vc.ProfileImage = friend.profileImage.image
+                vc.linkProfileImage = friend.linkProfileImage
+                vc.online = friend.getOnline()
+                vc.lastSeen = friend.getLastSeen()
             }
         }
     }

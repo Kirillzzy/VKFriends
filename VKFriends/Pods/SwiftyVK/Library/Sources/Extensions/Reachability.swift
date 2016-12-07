@@ -35,7 +35,7 @@ public enum ReachabilityError: Error {
 
 public let ReachabilityChangedNotification = NSNotification.Name("ReachabilityChangedNotification")
 
-func callback(reachability:SCNetworkReachability, flags: SCNetworkReachabilityFlags, info: UnsafeMutableRawPointer?) {
+func callback(reachability: SCNetworkReachability, flags: SCNetworkReachabilityFlags, info: UnsafeMutableRawPointer?) {
     
     guard let info = info else { return }
     
@@ -57,9 +57,12 @@ public class Reachability {
         
         public var description: String {
             switch self {
-            case .reachableViaWWAN: return "Cellular"
-            case .reachableViaWiFi: return "WiFi"
-            case .notReachable: return "No Connection"
+            case .reachableViaWWAN:
+                return "Cellular"
+            case .reachableViaWiFi:
+                return "WiFi"
+            case .notReachable:
+                return "No Connection"
             }
         }
     }
@@ -286,7 +289,8 @@ fileprivate extension Reachability {
         
         if gotFlags {
             return flags
-        } else {
+        }
+        else {
             return SCNetworkReachabilityFlags()
         }
     }

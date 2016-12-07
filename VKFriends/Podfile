@@ -8,3 +8,4 @@ pod 'AlamofireImage', '~> 3.1'
 pod 'SDWebImage', :git => 'https://github.com/rs/SDWebImage.git'
 pod 'RealmSwift'
 end
+

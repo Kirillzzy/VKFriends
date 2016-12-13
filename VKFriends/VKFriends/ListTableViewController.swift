@@ -15,7 +15,6 @@ class ListTableViewController: UITableViewController {
     let refreshCtrl = UIRefreshControl()
     
     var friends = [VKFriendClass]()
-    let vkManager = ApiWorker.sharedInstance
 
 
     override func viewDidLoad() {
@@ -27,7 +26,7 @@ class ListTableViewController: UITableViewController {
         }
         refreshCtrl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshCtrl.addTarget(self, action: #selector(refreshTableView(sender:)), for: .valueChanged)
-        if vkManager.state == .authorized {
+        if ApiWorker.state == .authorized {
             reloadTableView()
         }
 
@@ -47,7 +46,7 @@ class ListTableViewController: UITableViewController {
     }
     
     private func reloadTableView(){
-        self.friends = vkManager.friends
+        friends = ApiWorker.friends
         self.friendsTableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendCell")
         self.reloadUI()
     }

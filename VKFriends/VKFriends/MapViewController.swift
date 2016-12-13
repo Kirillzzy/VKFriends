@@ -17,7 +17,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var map: MKMapView!
     private var locationManager: CLLocationManager!
     var coords: (Double, Double) = (0, 0)
-    let vkManager = ApiWorker.sharedInstance
     var friends = [VKFriendClass]()
     
     private var geocoder = CLGeocoder()
@@ -39,17 +38,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
-        let when = DispatchTime.now() + 5
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.reloadMap()
-            self.setRegionAndSpan()
-        }
+        self.reloadMap()
+        self.setRegionAndSpan()
        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.reloadMap()
+        self.setRegionAndSpan()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,7 +55,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func reloadMap(){
         map.removeAnnotations(map.annotations)
-        self.friends = self.vkManager.friends
+        self.friends = ApiWorker.friends
         self.addFriendsOnMap()
     }
     
@@ -148,7 +145,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func setRegionAndSpan(){
-        map.showAnnotations(map.annotations, animated: true)
+        let pins = map.annotations
+        map.showAnnotations(pins, animated: true)
     }
     
 }
@@ -171,6 +169,7 @@ extension MapViewController{
                 vc.city = friend.getCity()
                 vc.id = friend.getId()
                 vc.linkProfileImage = friend.linkProfileImage
+                vc.online = friend.getOnline()
             }
         }
     }

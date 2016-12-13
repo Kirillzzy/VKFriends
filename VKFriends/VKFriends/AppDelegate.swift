@@ -9,12 +9,19 @@
 import UIKit
 import SwiftyVK
 
+var vkDelegateReference: VKDelegate?
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        vkDelegateReference = VKManager()
+        return true
+    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let app = options[.sourceApplication] as? String

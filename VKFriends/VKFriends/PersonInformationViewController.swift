@@ -23,6 +23,7 @@ class PersonInformationViewController: UIViewController {
     @IBOutlet weak var ProfileImageUIImageView: UIImageView!
     @IBOutlet weak var onlineLabel: UILabel!
     @IBOutlet weak var lastSeenLabel: UILabel!
+    @IBOutlet weak var newMessageButton: UIButton!
     
     override func loadView() {
         super.loadView()
@@ -33,24 +34,38 @@ class PersonInformationViewController: UIViewController {
         super.viewDidLoad()
         nameLabel.text = name
         cityLabel.text = city
-        lastSeenLabel.text = lastSeen
+        //lastSeenLabel.text = lastSeen
         if online == true{
             onlineLabel.text = "Online"
         }else{
-            onlineLabel.text = "Offline"
+            onlineLabel.text = lastSeen
         }
         ProfileImageUIImageView.sd_setImage(with: URL(string: linkProfileImage))
         ProfileImageUIImageView.layer.masksToBounds = true
-        ProfileImageUIImageView.layer.cornerRadius = 15
+        ProfileImageUIImageView.layer.cornerRadius = 30
+        newMessageButton.layer.masksToBounds = true
+        newMessageButton.layer.cornerRadius = 5
     }
     
     @IBAction func newMessageButtonPressed(_ sender: Any) {
-       
+        performSegue(withIdentifier: "toChatSegue", sender: "Success")
     }
     
     @IBAction func buyFriendButtonPressed(_ sender: Any) {
         
     }
 
+}
+
+
+extension PersonInformationViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "toChatSegue"{
+            if let vc = segue.destination as? ChatViewController{
+                vc.title = name
+                vc.name = name
+            }
+        }
+    }
 }
 

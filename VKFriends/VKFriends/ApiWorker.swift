@@ -13,65 +13,28 @@ import Alamofire
 
 
 
-class ApiWorker: VKDelegate{
+final class ApiWorker{
     
-    var friends = [VKFriendClass]()
-    var status: Bool = false
-   
-    init(){
-        VK.configure(withAppId: Constants.appID, delegate: self)
-        VK.logIn()
-    }
-    
-    func vkWillAuthorize() -> Set<VK.Scope> {
-        return [.offline, .friends]
-    }
-    
-    func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
-        print("Autorized")
-        friendsGet()
-    }
-    
-    func vkAutorizationFailedWith(error: AuthError) {}
-    
-    func vkDidUnauthorize() {
-        
-    }
-    
-    func vkShouldUseTokenPath() -> String? {
-        return nil
-    }
-    
-    func vkWillPresentView() -> UIViewController {
-        return UIApplication.shared.delegate!.window!!.rootViewController!
-    }
-    
-    static let sharedInstance: ApiWorker = {
-        let instance = ApiWorker()
-        return instance
-    }()
-    
+    static var friends = [VKFriendClass]()
 
-    func checkState() -> VK.States{
+    class func checkState() -> VK.States{
         return VK.state
     }
     
 
-    func logout() {
+    class func logout() {
         VK.logOut()
         print("SwiftyVK: LogOut")
     }
     
-    var state: VK.States{
+    class var state: VK.States{
         get{
             return VK.state
         }
     }
     
-
     
-    
-    func friendsGet(){
+    class func friendsGet(){
         _ = VK.API.Friends.get([
             .count : "0",
             .fields : "city,domain,photo_200_orig,online,last_seen"
@@ -95,6 +58,8 @@ class ApiWorker: VKDelegate{
                     }
                     self.friends.sort(by: {friend1, friend2 in friend1.getName() < friend2.getName()})
                 },
-                onError: {error in print("error")})
+                onError: {
+                    error in print("error")
+            })
     }
 }

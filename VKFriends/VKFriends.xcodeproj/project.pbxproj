@@ -11,6 +11,9 @@
 		7B1AF5A71DD1E8820022430A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */; };
 		7B226D261DDA5A8A00BABF3A /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B226D241DDA5A8A00BABF3A /* FriendTableViewCell.swift */; };
 		7B226D271DDA5A8A00BABF3A /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B226D251DDA5A8A00BABF3A /* FriendTableViewCell.xib */; };
+		7B2961661E005207004F2D77 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961651E005207004F2D77 /* LogInViewController.swift */; };
+		7B2961681E005459004F2D77 /* VKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961671E005459004F2D77 /* VKManager.swift */; };
+		7B29616A1E0096D3004F2D77 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961691E0096D3004F2D77 /* ChatViewController.swift */; };
 		7B3549D11DEC4B7400F38A4B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3549D01DEC4B7400F38A4B /* User.swift */; };
 		7B3549D31DEC4B8400F38A4B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3549D21DEC4B8400F38A4B /* Realm.framework */; };
 		7B3549D51DEC4B8900F38A4B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3549D41DEC4B8900F38A4B /* RealmSwift.framework */; };
@@ -51,6 +54,9 @@
 		7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
 		7B226D241DDA5A8A00BABF3A /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		7B226D251DDA5A8A00BABF3A /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		7B2961651E005207004F2D77 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		7B2961671E005459004F2D77 /* VKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKManager.swift; sourceTree = "<group>"; };
+		7B2961691E0096D3004F2D77 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		7B3549D01DEC4B7400F38A4B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7B3549D21DEC4B8400F38A4B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
 		7B3549D41DEC4B8900F38A4B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
@@ -183,7 +189,10 @@
 				7BC34BB41DCB3D3E00DA3B53 /* MapViewController.swift */,
 				7BB0E4801DD30CF90024BA18 /* ListTableViewController.swift */,
 				7BC34BD01DCD198600DA3B53 /* PersonInformationViewController.swift */,
+				7B2961651E005207004F2D77 /* LogInViewController.swift */,
+				7B2961691E0096D3004F2D77 /* ChatViewController.swift */,
 				7B95453A1DD5016E003AF335 /* VKFriendClass.swift */,
+				7B2961671E005459004F2D77 /* VKManager.swift */,
 				7BC34BCC1DCB7CB800DA3B53 /* ApiWorker.swift */,
 				7BC34BCA1DCB47C000DA3B53 /* Constants.swift */,
 				7B69F48D1DE21E1500790C48 /* IAPHelper.swift */,
@@ -373,9 +382,12 @@
 				7B69F4901DE21FD100790C48 /* Products.swift in Sources */,
 				7BC34BB51DCB3D3E00DA3B53 /* MapViewController.swift in Sources */,
 				7BB0E4811DD30CF90024BA18 /* ListTableViewController.swift in Sources */,
+				7B2961681E005459004F2D77 /* VKManager.swift in Sources */,
 				7BC34BB31DCB3D3E00DA3B53 /* AppDelegate.swift in Sources */,
 				7BC34BCD1DCB7CB800DA3B53 /* ApiWorker.swift in Sources */,
 				7B95453B1DD5016E003AF335 /* VKFriendClass.swift in Sources */,
+				7B2961661E005207004F2D77 /* LogInViewController.swift in Sources */,
+				7B29616A1E0096D3004F2D77 /* ChatViewController.swift in Sources */,
 				7B226D261DDA5A8A00BABF3A /* FriendTableViewCell.swift in Sources */,
 				7BC34BD11DCD198600DA3B53 /* PersonInformationViewController.swift in Sources */,
 				7B69F48E1DE21E1500790C48 /* IAPHelper.swift in Sources */,

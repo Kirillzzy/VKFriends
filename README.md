@@ -9,14 +9,14 @@ Features:
 
 Todo:
 - To finish IAP
-- add Messenger
+- add Messanger
 - Improve UI
 - add some features
 
-![alt tag](https://github.com/Kirillzzy/VKFriends/blob/master/Simulator%20Screen%20Shot%2020%20Nov%202016%2C%2023.37.39.png)
+![alt tag](https://github.com/Kirillzzy/VKFriends/blob/master/Map.png)
 
 
-![alt tag](https://github.com/Kirillzzy/VKFriends/blob/master/Simulator%20Screen%20Shot%2020%20Nov%202016%2C%2023.38.12.png)
+![alt tag](https://github.com/Kirillzzy/VKFriends/blob/master/List.png)
 
 
-![alt tag](https://github.com/Kirillzzy/VKFriends/blob/master/Simulator%20Screen%20Shot%2020%20Nov%202016%2C%2023.38.21.png)
+![alt tag](https://github.com/Kirillzzy/VKFriends/blob/master/Person.png)

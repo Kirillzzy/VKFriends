@@ -13,11 +13,11 @@ import SwiftyVK
 class VKManager: VKDelegate{
     
     init(){
-        VK.configure(withAppId: Constants.appID, delegate: self)
+        VK.configure(withAppId: Constants.VKappID, delegate: self)
     }
     
     func vkWillAuthorize() -> Set<VK.Scope> {
-        return [.offline, .notifications, .wall, .friends]
+        return [.offline, .notifications, .wall, .friends, .messages]
     }
     
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {

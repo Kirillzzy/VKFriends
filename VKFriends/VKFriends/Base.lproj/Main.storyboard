@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vbm-gw-zeD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vbm-gw-zeD">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -131,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fbM-2G-ErK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="640"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" red="0.87800198789999995" green="0.90112406020000002" blue="0.99628728629999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="WsE-U5-EHk" id="caR-cw-svZ"/>
@@ -162,8 +162,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Aqk-pb-kh8" secondAttribute="trailing" constant="-11" id="QQx-Rb-1EH"/>
                             <constraint firstItem="fbM-2G-ErK" firstAttribute="top" secondItem="b9O-dP-lJy" secondAttribute="top" id="ROA-F6-88z"/>
                             <constraint firstItem="O9N-rR-Z7g" firstAttribute="leading" secondItem="b9O-dP-lJy" secondAttribute="leadingMargin" constant="-11" id="VMj-8w-5QE"/>
-                            <constraint firstItem="Aqk-pb-kh8" firstAttribute="top" secondItem="fbM-2G-ErK" secondAttribute="bottom" constant="8" id="WIM-7f-nCL"/>
-                            <constraint firstItem="O9N-rR-Z7g" firstAttribute="top" secondItem="fbM-2G-ErK" secondAttribute="bottom" constant="8" id="nCy-Yy-2Re"/>
+                            <constraint firstItem="SmU-BE-BTc" firstAttribute="top" secondItem="fbM-2G-ErK" secondAttribute="bottom" id="b6K-3t-hhl"/>
                             <constraint firstItem="Aqk-pb-kh8" firstAttribute="leading" secondItem="O9N-rR-Z7g" secondAttribute="trailing" constant="8" id="o0D-bA-8Oe"/>
                             <constraint firstItem="SmU-BE-BTc" firstAttribute="top" secondItem="Aqk-pb-kh8" secondAttribute="bottom" constant="9" id="xai-hA-CUP"/>
                             <constraint firstItem="SmU-BE-BTc" firstAttribute="top" secondItem="O9N-rR-Z7g" secondAttribute="bottom" constant="9" id="yuu-Gm-gvg"/>
@@ -319,7 +318,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TKt-r2-Jw4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="list" id="Tsa-v6-BsB"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="k5n-yP-Aim">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k5n-yP-Aim">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.36006417870000001" green="0.52685630319999999" blue="0.71430587769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -339,7 +338,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aUc-0T-Gie" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="geolocation" id="jt9-Yc-qzV"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xrx-RZ-nRL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xrx-RZ-nRL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.36006417870000001" green="0.52685630319999999" blue="0.71430587769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -64,6 +64,7 @@ extension PersonInformationViewController{
             if let vc = segue.destination as? ChatViewController{
                 vc.title = name
                 vc.name = name
+                vc.userId = id
             }
         }
     }

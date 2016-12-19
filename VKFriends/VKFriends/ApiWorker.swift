@@ -59,7 +59,56 @@ final class ApiWorker{
                     self.friends.sort(by: {friend1, friend2 in friend1.getName() < friend2.getName()})
                 },
                 onError: {
-                    error in print("error")
+                    error in print(error)
+                    if (error as NSError).code == 15{
+                        VK.logOut()
+                        VK.logIn()
+                    }
             })
     }
+    
+    
+    class func messagesGetByUser(userId: String) -> [MessageClass]{
+        var messagesFromUser = [MessageClass]()
+        var status = false
+        _ = VK.API.Messages.getHistory([
+            .count: "100",
+            .userId: userId]).send(
+            onSuccess: { response in
+                for message in response["items"].arrayValue{
+                    if message["body"].stringValue == ""{
+                        continue
+                    }
+                    messagesFromUser.append(MessageClass(userId: message["user_id"].stringValue,
+                                                         fromId: message["from_id"].stringValue,
+                                                         id: message["id"].stringValue,
+                                                         text: message["body"].stringValue,
+                                                         date: message["date"].stringValue,
+                                                         readState: message["read_state"].boolValue))
+                }
+                messagesFromUser.reverse()
+                status = true
+            },
+            onError: {
+                error in print(error)
+                if (error as NSError).code == 15{
+                    VK.logOut()
+                    VK.logIn()
+                }
+        })
+        while(!status){}
+        return messagesFromUser
+    }
+    
+    class func sendMessageToUser(userId: String, message: String){
+        _ = VK.API.Messages.send([
+            .userId: userId,
+            .message: message]).send(
+                onSuccess: { response in
+                print("Success send message to \(userId)")
+            }, onError: { error in
+                print(error)
+            })
+    }
+    
 }

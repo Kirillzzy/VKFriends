@@ -46,7 +46,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.reloadMap()
-        self.setRegionAndSpan()
+        //self.setRegionAndSpan()
     }
     
     override func viewDidAppear(_ animated: Bool) {

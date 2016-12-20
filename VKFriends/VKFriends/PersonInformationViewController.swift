@@ -43,6 +43,7 @@ class PersonInformationViewController: UIViewController {
         ProfileImageUIImageView.sd_setImage(with: URL(string: linkProfileImage))
         ProfileImageUIImageView.layer.masksToBounds = true
         ProfileImageUIImageView.layer.cornerRadius = 30
+        ProfileImageUIImageView.contentMode = UIViewContentMode.top
         newMessageButton.layer.masksToBounds = true
         newMessageButton.layer.cornerRadius = 5
     }
@@ -65,6 +66,7 @@ extension PersonInformationViewController{
                 vc.title = name
                 vc.name = name
                 vc.userId = id
+                vc.linkProfileImage = linkProfileImage
             }
         }
     }

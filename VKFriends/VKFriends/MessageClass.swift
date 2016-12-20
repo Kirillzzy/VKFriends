@@ -19,7 +19,7 @@ class MessageClass{
     
     init(userId: String, fromId: String, id: String, text: String, date: String, readState: Bool){
         self.userId = userId
-        self.fromId = userId
+        self.fromId = fromId
         self.id = id
         self.text = text
         self.date = date

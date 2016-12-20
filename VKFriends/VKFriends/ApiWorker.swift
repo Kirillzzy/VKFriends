@@ -111,4 +111,18 @@ final class ApiWorker{
             })
     }
     
+    
+    class func getCurrentUser(){
+        _ = VK.API.Users.get([
+            .fields: "photo_200_orig"
+            ]).send(onSuccess: { response in
+                CurrentUserClass.firstName = response[0, "first_name"].stringValue
+                CurrentUserClass.lastName = response[0, "last_name"].stringValue
+                CurrentUserClass.id = response[0, "id"].stringValue
+                CurrentUserClass.linkProfileImage = response[0, "photo_200_orig"].stringValue
+        }, onError: { error in
+            print(error)
+        })
+    }
+    
 }

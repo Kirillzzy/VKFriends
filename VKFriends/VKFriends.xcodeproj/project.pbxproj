@@ -36,6 +36,9 @@
 		7BC34BCF1DCB991F00DA3B53 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC34BCE1DCB991F00DA3B53 /* SwiftyJSON.framework */; };
 		7BC34BD11DCD198600DA3B53 /* PersonInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34BD01DCD198600DA3B53 /* PersonInformationViewController.swift */; };
 		8AB198531E0877AE0008BC9A /* MessageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB198521E0877AE0008BC9A /* MessageClass.swift */; };
+		8AB198561E0919810008BC9A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB198541E0919810008BC9A /* MessageTableViewCell.swift */; };
+		8AB198571E0919810008BC9A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB198551E0919810008BC9A /* MessageTableViewCell.xib */; };
+		8AB198591E099B1F0008BC9A /* CurrentUserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB198581E099B1F0008BC9A /* CurrentUserClass.swift */; };
 		8AE60E721E068B3300A9662F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60E711E068B3300A9662F /* Constants.swift */; };
 		96F95778752B02453C79271E /* Pods_VKFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF44720F330C5D652C043B /* Pods_VKFriends.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +88,9 @@
 		7BC34BCE1DCB991F00DA3B53 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/VKFriends-glkmzbhzveewywdbrtbsxsuwqzwt/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		7BC34BD01DCD198600DA3B53 /* PersonInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonInformationViewController.swift; sourceTree = "<group>"; };
 		8AB198521E0877AE0008BC9A /* MessageClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageClass.swift; sourceTree = "<group>"; };
+		8AB198541E0919810008BC9A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		8AB198551E0919810008BC9A /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		8AB198581E099B1F0008BC9A /* CurrentUserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserClass.swift; sourceTree = "<group>"; };
 		8AE60E711E068B3300A9662F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A41BC49DFFA3377038EB6B7E /* Pods-VKFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.release.xcconfig"; sourceTree = "<group>"; };
 		BF47DBFF8605664D500DD80F /* Pods-VKFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +194,8 @@
 				7BC34BB21DCB3D3E00DA3B53 /* AppDelegate.swift */,
 				7B226D241DDA5A8A00BABF3A /* FriendTableViewCell.swift */,
 				7B226D251DDA5A8A00BABF3A /* FriendTableViewCell.xib */,
+				8AB198541E0919810008BC9A /* MessageTableViewCell.swift */,
+				8AB198551E0919810008BC9A /* MessageTableViewCell.xib */,
 				7BC34BB41DCB3D3E00DA3B53 /* MapViewController.swift */,
 				7BB0E4801DD30CF90024BA18 /* ListTableViewController.swift */,
 				7BC34BD01DCD198600DA3B53 /* PersonInformationViewController.swift */,
@@ -198,6 +206,7 @@
 				8AE60E711E068B3300A9662F /* Constants.swift */,
 				7B2961671E005459004F2D77 /* VKManager.swift */,
 				7BC34BCC1DCB7CB800DA3B53 /* ApiWorker.swift */,
+				8AB198581E099B1F0008BC9A /* CurrentUserClass.swift */,
 				7B69F48D1DE21E1500790C48 /* IAPHelper.swift */,
 				7B69F48F1DE21FD100790C48 /* Products.swift */,
 				7BC34BB61DCB3D3E00DA3B53 /* Main.storyboard */,
@@ -310,6 +319,7 @@
 			files = (
 				7BC34BBD1DCB3D3E00DA3B53 /* LaunchScreen.storyboard in Resources */,
 				7BC34BBA1DCB3D3E00DA3B53 /* Assets.xcassets in Resources */,
+				8AB198571E0919810008BC9A /* MessageTableViewCell.xib in Resources */,
 				7BC34BB81DCB3D3E00DA3B53 /* Main.storyboard in Resources */,
 				7B226D271DDA5A8A00BABF3A /* FriendTableViewCell.xib in Resources */,
 			);
@@ -391,8 +401,10 @@
 				7B95453B1DD5016E003AF335 /* VKFriendClass.swift in Sources */,
 				7B2961661E005207004F2D77 /* LogInViewController.swift in Sources */,
 				7B29616A1E0096D3004F2D77 /* ChatViewController.swift in Sources */,
+				8AB198591E099B1F0008BC9A /* CurrentUserClass.swift in Sources */,
 				7B226D261DDA5A8A00BABF3A /* FriendTableViewCell.swift in Sources */,
 				8AE60E721E068B3300A9662F /* Constants.swift in Sources */,
+				8AB198561E0919810008BC9A /* MessageTableViewCell.swift in Sources */,
 				7BC34BD11DCD198600DA3B53 /* PersonInformationViewController.swift in Sources */,
 				7B69F48E1DE21E1500790C48 /* IAPHelper.swift in Sources */,
 			);

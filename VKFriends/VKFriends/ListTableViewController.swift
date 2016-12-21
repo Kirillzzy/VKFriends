@@ -43,6 +43,9 @@ class ListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        if friends.count == 0{
+            reloadTableView()
+        }
     }
     
     private func reloadTableView(){

@@ -95,6 +95,7 @@ final class ApiWorker{
                     VK.logOut()
                     VK.logIn()
                 }
+                status = true
         })
         while(!status){}
         return messagesFromUser

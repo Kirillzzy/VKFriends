@@ -113,7 +113,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.profileImageView.sd_setImage(with: URL(string: self.linkProfileImage))
         }else{
             cell.profileImageView.sd_setImage(with: URL(string: CurrentUserClass.linkProfileImage))
-            print(CurrentUserClass.linkProfileImage)
         }
         return cell
     }

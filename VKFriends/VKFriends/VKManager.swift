@@ -22,7 +22,7 @@ class VKManager: VKDelegate{
     
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
         print("Autorized")
-        ApiWorker.friendsGet()
+        //ApiWorker.friendsGet()
         ApiWorker.getCurrentUser()
     }
     

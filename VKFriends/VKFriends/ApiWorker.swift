@@ -15,7 +15,7 @@ import Alamofire
 
 final class ApiWorker{
     
-    static var friends = [VKFriendClass]()
+    //static var friends = [VKFriendClass]()
 
     class func checkState() -> VK.States{
         return VK.state
@@ -34,14 +34,15 @@ final class ApiWorker{
     }
     
     
-    class func friendsGet(){
+    class func friendsGet(callback: @escaping (_ friends: [VKFriendClass]?) -> Void){
+        var friends = [VKFriendClass]()
         _ = VK.API.Friends.get([
             .count : "0",
             .fields : "city,domain,photo_200_orig,online,last_seen"
             ]).send(
                 onSuccess: {response in
                     //cleaning array
-                    self.friends.removeAll()
+                    friends.removeAll()
                     for friend in response["items"].arrayValue{
                         var cityFriend = ""
                         if let cityName = friend["city", "title"].string{
@@ -54,9 +55,10 @@ final class ApiWorker{
                                 linkProfileImage: friend["photo_200_orig"].stringValue,
                                 lastSeen: friend["last_seen", "time"].stringValue,
                                 online: friend["online"].boolValue)
-                        self.friends.append(newFriend)
+                        friends.append(newFriend)
                     }
-                    self.friends.sort(by: {friend1, friend2 in friend1.getName() < friend2.getName()})
+                    //self.friends.sort(by: {friend1, friend2 in friend1.getName() < friend2.getName()})
+                    callback(friends)
                 },
                 onError: {
                     error in print(error)
@@ -64,6 +66,7 @@ final class ApiWorker{
                         VK.logOut()
                         VK.logIn()
                     }
+                    callback(nil)
             })
     }
     

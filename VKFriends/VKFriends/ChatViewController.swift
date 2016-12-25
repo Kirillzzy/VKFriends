@@ -31,6 +31,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         chatTableView.rowHeight = UITableViewAutomaticDimension
         messageTextField.delegate = self
         notificationCenterInit()
+        messageTextField.layer.masksToBounds = true
+        messageTextField.layer.cornerRadius = 5
         firstConstraintBottom = bottomConstraint.constant
     }
     
@@ -175,7 +177,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         let changeInHeight = (keyboardFrame.height) * (show ? 1 : -1)
         UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
-            self.bottomConstraint.constant = changeInHeight - 24
+            self.bottomConstraint.constant = changeInHeight - 30
         })
         
     }

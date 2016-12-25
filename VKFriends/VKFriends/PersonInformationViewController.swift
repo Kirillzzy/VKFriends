@@ -42,7 +42,7 @@ class PersonInformationViewController: UIViewController {
         }
         ProfileImageUIImageView.sd_setImage(with: URL(string: linkProfileImage))
         ProfileImageUIImageView.layer.masksToBounds = true
-        ProfileImageUIImageView.layer.cornerRadius = 30
+        ProfileImageUIImageView.layer.cornerRadius = 96
         ProfileImageUIImageView.contentMode = UIViewContentMode.top
         newMessageButton.layer.masksToBounds = true
         newMessageButton.layer.cornerRadius = 5

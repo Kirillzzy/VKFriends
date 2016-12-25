@@ -26,6 +26,7 @@ class ListTableViewController: UITableViewController {
         }
         refreshCtrl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshCtrl.addTarget(self, action: #selector(refreshTableView(sender:)), for: .valueChanged)
+        friendsTableView.rowHeight = CGFloat(60)
         if ApiWorker.state == .authorized {
             reloadTableView()
         }
@@ -43,15 +44,17 @@ class ListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if friends.count == 0{
-            reloadTableView()
-        }
+        reloadTableView()
     }
     
     private func reloadTableView(){
-        friends = ApiWorker.friends
-        self.friendsTableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendCell")
-        self.reloadUI()
+        ApiWorker.friendsGet(callback: { friends in
+            if let lastFriends = friends{
+                self.friends = lastFriends
+                self.friendsTableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendCell")
+                self.reloadUI()
+            }
+        })
     }
     
     private func reloadUI(){
@@ -76,9 +79,7 @@ class ListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendTableViewCell
         cell.profileImageView.sd_setImage(with: URL(string: friends[indexPath.row].getLinkPhoto()))
         cell.nameCityLabel.text = friends[indexPath.row].getName()
-        if friends[indexPath.row].getCity() != ""{
-            cell.nameCityLabel.text = friends[indexPath.row].getName() + ": " + friends[indexPath.row].getCity()
-        }
+        cell.cityLabel.text = friends[indexPath.row].getCity()
         return cell
     }
     

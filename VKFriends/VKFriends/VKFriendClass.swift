@@ -112,7 +112,7 @@ class VKFriendClass: NSObject, MKAnnotation{
         if day.characters.count == 1{
             day = "0" + day
         }
-        self.lastSeen = String("Last seen " + month + "." + day + " " + hour + ":" + minutes)
+        self.lastSeen = String("Last seen " + day + "." + month + " " + hour + ":" + minutes)
     }
     
     static func resizeImage(image: UIImage, newW: Double, newH: Double) -> UIImage {

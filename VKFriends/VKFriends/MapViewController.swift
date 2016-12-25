@@ -55,8 +55,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func reloadMap(){
         map.removeAnnotations(map.annotations)
-        self.friends = ApiWorker.friends
-        self.addFriendsOnMap()
+        ApiWorker.friendsGet(callback: { friends in
+            if let lastFriends = friends{
+                self.friends = lastFriends
+                self.addFriendsOnMap()
+            }
+        })
     }
     
     
@@ -64,6 +68,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         for friend in friends{
             addFriendOnMap(friend: friend)
         }
+    }
+    
+    @IBAction func reloadButtonPressed(_ sender: Any) {
+        reloadMap()
     }
     
     func addFriendOnMap(friend: VKFriendClass){

@@ -159,21 +159,40 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3O-PW-J85">
+                                <rect key="frame" x="0.0" y="64" width="414" height="642"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="afA-fR-RFu">
+                                        <rect key="frame" x="197" y="311" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="afA-fR-RFu" firstAttribute="centerY" secondItem="X3O-PW-J85" secondAttribute="centerY" id="QD8-Uf-6zS"/>
+                                    <constraint firstItem="afA-fR-RFu" firstAttribute="centerX" secondItem="X3O-PW-J85" secondAttribute="centerX" id="z2v-WW-DrI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.87800198789999995" green="0.90112406020000002" blue="0.99628728629999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fbM-2G-ErK" secondAttribute="trailing" id="07F-VT-cbp"/>
                             <constraint firstItem="fbM-2G-ErK" firstAttribute="top" secondItem="b7l-nx-so4" secondAttribute="bottom" id="1nv-Ms-AMf"/>
+                            <constraint firstItem="X3O-PW-J85" firstAttribute="leading" secondItem="b9O-dP-lJy" secondAttribute="leading" id="A4t-b3-Hby"/>
                             <constraint firstItem="fbM-2G-ErK" firstAttribute="leading" secondItem="b9O-dP-lJy" secondAttribute="leading" id="Elg-bY-qvK"/>
+                            <constraint firstItem="X3O-PW-J85" firstAttribute="top" secondItem="b7l-nx-so4" secondAttribute="bottom" id="Gfz-kL-79m"/>
                             <constraint firstItem="srd-Ie-lBm" firstAttribute="leading" secondItem="b9O-dP-lJy" secondAttribute="leadingMargin" constant="-11" id="N6D-6r-xjt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Aqk-pb-kh8" secondAttribute="trailing" constant="-11" id="QQx-Rb-1EH"/>
                             <constraint firstItem="srd-Ie-lBm" firstAttribute="top" secondItem="fbM-2G-ErK" secondAttribute="bottom" priority="500" constant="9" id="Ru9-4s-lt8"/>
                             <constraint firstItem="Aqk-pb-kh8" firstAttribute="top" secondItem="fbM-2G-ErK" secondAttribute="bottom" constant="8" id="YvJ-xE-uqh"/>
                             <constraint firstItem="Aqk-pb-kh8" firstAttribute="leading" secondItem="srd-Ie-lBm" secondAttribute="trailing" constant="8" id="hvg-s4-B1v"/>
+                            <constraint firstAttribute="trailing" secondItem="X3O-PW-J85" secondAttribute="trailing" id="lV7-Eh-3QQ"/>
+                            <constraint firstItem="Aqk-pb-kh8" firstAttribute="top" secondItem="X3O-PW-J85" secondAttribute="bottom" constant="-60" id="qGY-R0-lxF"/>
                             <constraint firstItem="SmU-BE-BTc" firstAttribute="top" secondItem="srd-Ie-lBm" secondAttribute="bottom" constant="8" id="qii-IV-SGp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="afA-fR-RFu" id="kaQ-zw-Zxh"/>
+                        <outlet property="activityView" destination="X3O-PW-J85" id="k6X-je-dfU"/>
                         <outlet property="bottomConstraint" destination="qii-IV-SGp" id="XFk-I5-U98"/>
                         <outlet property="chatTableView" destination="fbM-2G-ErK" id="Sw1-Ag-Qsn"/>
                         <outlet property="messageTextField" destination="srd-Ie-lBm" id="TAm-Vj-bRw"/>

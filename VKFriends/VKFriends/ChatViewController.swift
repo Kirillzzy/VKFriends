@@ -15,6 +15,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var name: String!
     var userId: String!
@@ -25,7 +27,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messagesFromUser = ApiWorker.messagesGetByUser(userId: userId)
+        //messagesFromUser = ApiWorker.messagesGetByUser(userId: userId)
         chatTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
         chatTableView.estimatedRowHeight = 80
         chatTableView.rowHeight = UITableViewAutomaticDimension
@@ -36,14 +38,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         firstConstraintBottom = bottomConstraint.constant
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        scrollDownTableView(false)
-        super.viewWillAppear(animated )
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        activityIndicator.startAnimating()
+        reloadTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        reloadTableView()
         super.viewDidAppear(animated)
+        scrollDownTableView(true)
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityView.isHidden = true
+        self.activityIndicator.stopAnimating()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,9 +67,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func reloadTableView(){
-        messagesFromUser = ApiWorker.messagesGetByUser(userId: userId)
-        chatTableView.reloadData()
-        scrollDownTableView(false)
+        self.messagesFromUser = ApiWorker.messagesGetByUser(userId: userId)
+        self.chatTableView.reloadData()
+        self.scrollDownTableView(false)
     }
 
     

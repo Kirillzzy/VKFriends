@@ -10,13 +10,15 @@ import Foundation
 import SwiftyVK
 import AlamofireImage
 import Alamofire
+import MapKit
 
 
 
-final class ApiWorker{
+class ApiWorker{
     
-    //static var friends = [VKFriendClass]()
-
+    static var friends = [VKFriendClass]()
+    static var locationsOfFriends = [String: CLLocationCoordinate2D]()
+    
     class func checkState() -> VK.States{
         return VK.state
     }
@@ -55,9 +57,19 @@ final class ApiWorker{
                                 linkProfileImage: friend["photo_200_orig"].stringValue,
                                 lastSeen: friend["last_seen", "time"].stringValue,
                                 online: friend["online"].boolValue)
+                        if !self.locationsOfFriends.keys.contains(newFriend.getId()){
+                            newFriend.getCoordinates(callback: { coords in
+                                if coords != nil{
+                                    self.locationsOfFriends[newFriend.getId()] = coords!
+                                }
+                            })
+                        }else{
+                            newFriend.coordinate = self.locationsOfFriends[newFriend.getId()]!
+                        }
                         friends.append(newFriend)
                     }
-                    //self.friends.sort(by: {friend1, friend2 in friend1.getName() < friend2.getName()})
+                    //friends.sort(by: {friend1, friend2 in friend1.getName() < friend2.getName()})
+                    self.friends = friends
                     callback(friends)
                 },
                 onError: {

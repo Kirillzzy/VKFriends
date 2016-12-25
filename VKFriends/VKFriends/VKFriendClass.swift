@@ -34,18 +34,19 @@ class VKFriendClass: NSObject, MKAnnotation{
     var coordinate: CLLocationCoordinate2D
     
     init(name: String, city: String?, id: String, linkProfileImage: String, lastSeen: String, online: Bool = false, coordinate: CLLocationCoordinate2D? = nil){
+        self.coordinate = coordinate ??  CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        super.init()
         self.name = name
         if let cityName = city{
             self.city = cityName
+            //self.getCoordinates()
         }
         self.id = id
         self.linkProfileImage = linkProfileImage
-        self.coordinate = coordinate ??  CLLocationCoordinate2D(latitude: 0, longitude: 0)
         self.online = online
         self.lastSeen = lastSeen
-        super.init()
         self.translateUnixToStringLastSeen()
-        self.getCoordinates()
+        //self.getCoordinates()
     }
     
     func reloadProfileImage(){
@@ -76,18 +77,18 @@ class VKFriendClass: NSObject, MKAnnotation{
         return lastSeen
     }
     
-    func getCoordinates(){
+    func getCoordinates(callback: @escaping (_ coords: CLLocationCoordinate2D?) -> Void){
         let geocoder = CLGeocoder()
-       
         if city == ""{
             return
         }
         geocoder.geocodeAddressString(city, completionHandler: {(placemark, error) in
             if error != nil{
-                return
+                callback(nil)
             }
             if let location = placemark?[0].location?.coordinate{
                 self.coordinate = location
+                callback(location)
             }
         })
     }

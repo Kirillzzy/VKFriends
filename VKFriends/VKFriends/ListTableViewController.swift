@@ -27,9 +27,10 @@ class ListTableViewController: UITableViewController {
         refreshCtrl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshCtrl.addTarget(self, action: #selector(refreshTableView(sender:)), for: .valueChanged)
         friendsTableView.rowHeight = CGFloat(60)
-        if ApiWorker.state == .authorized {
-            reloadTableView()
-        }
+//        if ApiWorker.state == .authorized {
+//            reloadTableView()
+//        }
+        reloadTableView()
 
     }
 
@@ -40,11 +41,17 @@ class ListTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        let when = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.reloadTableView()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        reloadTableView()
+        if self.friends.count == 0{
+            reloadTableView()
+        }
     }
     
     private func reloadTableView(){

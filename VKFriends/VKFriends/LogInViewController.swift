@@ -28,6 +28,7 @@ class LogInViewController: UIViewController {
             return
         }
         if ApiWorker.state == .authorized{
+            ApiWorker.getCurrentUser()
             performing()
         }else{
             VK.logIn()

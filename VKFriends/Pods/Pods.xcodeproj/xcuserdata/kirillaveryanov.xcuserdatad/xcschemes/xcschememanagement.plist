@@ -8,67 +8,36 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>AlamofireImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Pods-VKFriends.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>RealmSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>SwiftyVK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2C836C1D1A438ECF7549FEDB76483043</key>
+		<key>84E158B083E7F2D9F4ED34255CF57303</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86964C14C172BDE02E08D6742F620FFB</key>
+		<key>8504D63D9ECCD81CF06E3519257D1429</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,27 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
+		<key>8E6740413C425D73FD469768E68F67AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A3EE941448E11DB1410E9097C3CD968D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E047482356BE8FD41EBF228DF79F305B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E3D07041011B1FBA8B6312EC173E3F17</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FABAB491201CBCE5A3CF27EB1BD7DA19</key>
+		<key>E1816DA5883B208E371E6F464486CF53</key>
 		<dict>
 			<key>primary</key>
 			<true/>

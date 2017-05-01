@@ -10,8 +10,8 @@ import Foundation
 
 
 class CurrentUserClass{
-    static var firstName = ""
-    static var lastName = ""
-    static var id = ""
-    static var linkProfileImage = ""
+  static var firstName = ""
+  static var lastName = ""
+  static var id = ""
+  static var linkProfileImage = ""
 }

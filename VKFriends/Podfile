@@ -1,11 +1,9 @@
 use_frameworks!
 
 target 'VKFriends' do
-pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git'
+pod 'SwiftyVK'
 pod 'SwiftyJSON'
-pod 'Alamofire', '~> 4.0'
-pod 'AlamofireImage', '~> 3.1'
-pod 'SDWebImage', :git => 'https://github.com/rs/SDWebImage.git'
-pod 'RealmSwift'
+pod 'Alamofire'
+pod 'SDWebImage'
 end
 

@@ -14,7 +14,6 @@
 		7B2961661E005207004F2D77 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961651E005207004F2D77 /* LogInViewController.swift */; };
 		7B2961681E005459004F2D77 /* VKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961671E005459004F2D77 /* VKManager.swift */; };
 		7B29616A1E0096D3004F2D77 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961691E0096D3004F2D77 /* ChatViewController.swift */; };
-		7B3549D11DEC4B7400F38A4B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3549D01DEC4B7400F38A4B /* User.swift */; };
 		7B3549D31DEC4B8400F38A4B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3549D21DEC4B8400F38A4B /* Realm.framework */; };
 		7B3549D51DEC4B8900F38A4B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3549D41DEC4B8900F38A4B /* RealmSwift.framework */; };
 		7B69F48C1DE21D4F00790C48 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B69F48B1DE21D4F00790C48 /* StoreKit.framework */; };
@@ -61,7 +60,6 @@
 		7B2961651E005207004F2D77 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		7B2961671E005459004F2D77 /* VKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKManager.swift; sourceTree = "<group>"; };
 		7B2961691E0096D3004F2D77 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		7B3549D01DEC4B7400F38A4B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7B3549D21DEC4B8400F38A4B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
 		7B3549D41DEC4B8900F38A4B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		7B3549D61DEC5C5700F38A4B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -149,14 +147,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7B3549CF1DEC4AC400F38A4B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				7B3549D01DEC4B7400F38A4B /* User.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		7B69F4961DE229A200790C48 /* VKFriendsUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +160,6 @@
 		7BC34BA61DCB3D3D00DA3B53 = {
 			isa = PBXGroup;
 			children = (
-				7B3549CF1DEC4AC400F38A4B /* Models */,
 				7BC34BB11DCB3D3E00DA3B53 /* VKFriends */,
 				7B69F4961DE229A200790C48 /* VKFriendsUITests */,
 				7BC34BB01DCB3D3E00DA3B53 /* Products */,
@@ -192,29 +181,77 @@
 			isa = PBXGroup;
 			children = (
 				7BC34BB21DCB3D3E00DA3B53 /* AppDelegate.swift */,
+				8A4A85081EB73ED400385A5F /* Cells */,
+				8A4A85091EB73EDF00385A5F /* ViewControllers */,
+				8A4A850A1EB73EED00385A5F /* Models */,
+				8A4A850B1EB73EF900385A5F /* Helpers */,
+				8A4A850C1EB73F1000385A5F /* Storyboards */,
+				8A4A850D1EB73F2200385A5F /* Info */,
+			);
+			path = VKFriends;
+			sourceTree = "<group>";
+		};
+		8A4A85081EB73ED400385A5F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
 				7B226D241DDA5A8A00BABF3A /* FriendTableViewCell.swift */,
 				7B226D251DDA5A8A00BABF3A /* FriendTableViewCell.xib */,
 				8AB198541E0919810008BC9A /* MessageTableViewCell.swift */,
 				8AB198551E0919810008BC9A /* MessageTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		8A4A85091EB73EDF00385A5F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				7BC34BB41DCB3D3E00DA3B53 /* MapViewController.swift */,
 				7BB0E4801DD30CF90024BA18 /* ListTableViewController.swift */,
 				7BC34BD01DCD198600DA3B53 /* PersonInformationViewController.swift */,
 				7B2961651E005207004F2D77 /* LogInViewController.swift */,
 				7B2961691E0096D3004F2D77 /* ChatViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8A4A850A1EB73EED00385A5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8AB198581E099B1F0008BC9A /* CurrentUserClass.swift */,
 				7B95453A1DD5016E003AF335 /* VKFriendClass.swift */,
 				8AB198521E0877AE0008BC9A /* MessageClass.swift */,
-				8AE60E711E068B3300A9662F /* Constants.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8A4A850B1EB73EF900385A5F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
 				7B2961671E005459004F2D77 /* VKManager.swift */,
 				7BC34BCC1DCB7CB800DA3B53 /* ApiWorker.swift */,
-				8AB198581E099B1F0008BC9A /* CurrentUserClass.swift */,
 				7B69F48D1DE21E1500790C48 /* IAPHelper.swift */,
 				7B69F48F1DE21FD100790C48 /* Products.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		8A4A850C1EB73F1000385A5F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				7BC34BB61DCB3D3E00DA3B53 /* Main.storyboard */,
-				7BC34BB91DCB3D3E00DA3B53 /* Assets.xcassets */,
 				7BC34BBB1DCB3D3E00DA3B53 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		8A4A850D1EB73F2200385A5F /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				8AE60E711E068B3300A9662F /* Constants.swift */,
+				7BC34BB91DCB3D3E00DA3B53 /* Assets.xcassets */,
 				7BC34BBE1DCB3D3E00DA3B53 /* Info.plist */,
 			);
-			path = VKFriends;
+			name = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,7 +427,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B3549D11DEC4B7400F38A4B /* User.swift in Sources */,
 				7B69F4901DE21FD100790C48 /* Products.swift in Sources */,
 				7BC34BB51DCB3D3E00DA3B53 /* MapViewController.swift in Sources */,
 				8AB198531E0877AE0008BC9A /* MessageClass.swift in Sources */,

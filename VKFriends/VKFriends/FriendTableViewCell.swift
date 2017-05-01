@@ -9,23 +9,23 @@
 import UIKit
 
 class FriendTableViewCell: UITableViewCell {
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var nameCityLabel: UILabel!
-    @IBOutlet weak var onlineImageView: UIImageView!
-    @IBOutlet weak var cityLabel: UILabel!
-    
+  @IBOutlet weak var profileImageView: UIImageView!
+  @IBOutlet weak var nameCityLabel: UILabel!
+  @IBOutlet weak var onlineImageView: UIImageView!
+  @IBOutlet weak var cityLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        profileImageView.layer.masksToBounds = true
-        profileImageView.layer.cornerRadius = 28
-        //profileImageView.contentMode = UIViewContentMode.center
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    profileImageView.layer.masksToBounds = true
+    profileImageView.layer.cornerRadius = 28
+    //profileImageView.contentMode = UIViewContentMode.center
+  }
 
-        // Configure the view for the selected state
-    }
-    
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+
+    // Configure the view for the selected state
+  }
+
 }

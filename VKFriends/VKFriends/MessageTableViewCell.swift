@@ -9,20 +9,20 @@
 import UIKit
 
 class MessageTableViewCell: UITableViewCell {
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var profileImageView: UIImageView!
+  @IBOutlet weak var messageLabel: UILabel!
+  @IBOutlet weak var dateLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        profileImageView.layer.masksToBounds = true
-        profileImageView.layer.cornerRadius = 20
-    }
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    profileImageView.layer.masksToBounds = true
+    profileImageView.layer.cornerRadius = 20
+  }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
-    
+    // Configure the view for the selected state
+  }
+
 }

@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7B1AF5A51DD1E6620022430A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1AF5A41DD1E6620022430A /* Alamofire.framework */; };
-		7B1AF5A71DD1E8820022430A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1AF5A61DD1E8820022430A /* AlamofireImage.framework */; };
 		7B226D261DDA5A8A00BABF3A /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B226D241DDA5A8A00BABF3A /* FriendTableViewCell.swift */; };
 		7B226D271DDA5A8A00BABF3A /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B226D251DDA5A8A00BABF3A /* FriendTableViewCell.xib */; };
 		7B2961661E005207004F2D77 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961651E005207004F2D77 /* LogInViewController.swift */; };
 		7B2961681E005459004F2D77 /* VKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961671E005459004F2D77 /* VKManager.swift */; };
 		7B29616A1E0096D3004F2D77 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2961691E0096D3004F2D77 /* ChatViewController.swift */; };
-		7B3549D31DEC4B8400F38A4B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3549D21DEC4B8400F38A4B /* Realm.framework */; };
-		7B3549D51DEC4B8900F38A4B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3549D41DEC4B8900F38A4B /* RealmSwift.framework */; };
 		7B69F48C1DE21D4F00790C48 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B69F48B1DE21D4F00790C48 /* StoreKit.framework */; };
 		7B69F48E1DE21E1500790C48 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B69F48D1DE21E1500790C48 /* IAPHelper.swift */; };
 		7B69F4901DE21FD100790C48 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B69F48F1DE21FD100790C48 /* Products.swift */; };
@@ -107,11 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B3549D51DEC4B8900F38A4B /* RealmSwift.framework in Frameworks */,
-				7B3549D31DEC4B8400F38A4B /* Realm.framework in Frameworks */,
 				7BBD54F81DD4BB670055CA2D /* SDWebImage.framework in Frameworks */,
 				7B69F48C1DE21D4F00790C48 /* StoreKit.framework in Frameworks */,
-				7B1AF5A71DD1E8820022430A /* AlamofireImage.framework in Frameworks */,
 				7B1AF5A51DD1E6620022430A /* Alamofire.framework in Frameworks */,
 				7BC34BCF1DCB991F00DA3B53 /* SwiftyJSON.framework in Frameworks */,
 				7BC34BC51DCB408200DA3B53 /* SwiftyVK.framework in Frameworks */,

@@ -41,7 +41,7 @@ class ListTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        let when = DispatchTime.now() + 1
+        let when = DispatchTime.now() + 0.5
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.reloadTableView()
         }
